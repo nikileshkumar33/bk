@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123b72">
+  <title>Banking System</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/pro4.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div class="brand-icon" aria-hidden="true">🏦</div>
+      <div><p class="eyebrow">PERSONAL FINANCE</p><h1>Banking System</h1><p class="subtitle">Manage accounts, deposits, withdrawals and transactions.</p></div>
+    </header>
+
+    <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+
+    <section class="card">
+      <div class="section-heading"><span class="step">01</span><div><h2>Create an account</h2><p>Enter the customer details and opening balance.</p></div></div>
+      <form id="accountForm" class="form-grid">
+        <label>Customer name<input id="name" name="name" type="text" placeholder="Enter customer name" maxlength="100" required></label>
+        <label>Father's name<input id="fname" name="fname" type="text" placeholder="Enter father's name" maxlength="100" required></label>
+        <label class="full-width">Opening balance (₹)<input id="openingBalance" name="openingBalance" type="number" min="0" step="0.01" placeholder="0.00" required></label>
+        <button class="button primary full-width" type="submit">Create account</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="section-heading"><span class="step">02</span><div><h2>Choose an account</h2><p>Select a customer account for banking operations.</p></div></div>
+      <label>Customer account<select id="accountSelect"><option value="">Loading accounts…</option></select></label>
+      <div id="accountSummary" class="account-summary" hidden></div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading"><span class="step">03</span><div><h2>Bank operations</h2><p>Deposit or withdraw money, or view account information.</p></div></div>
+      <label>Amount (₹)<input id="amount" type="number" min="0.01" step="0.01" placeholder="Enter amount"></label>
+      <div class="button-grid">
+        <button id="depositBtn" class="button success" type="button">Deposit</button>
+        <button id="withdrawBtn" class="button danger" type="button">Withdraw</button>
+        <button id="balanceBtn" class="button secondary" type="button">Check balance</button>
+        <button id="detailsBtn" class="button secondary" type="button">Account details</button>
+        <button id="historyBtn" class="button dark full-width" type="button">Transaction history</button>
+      </div>
+    </section>
+
+    <section class="card result-card">
+      <div class="section-heading"><span class="step">04</span><div><h2>Account information</h2><p>Details and recent transaction history appear here.</p></div></div>
+      <div id="output" class="output"><p class="muted">Choose an account to get started.</p></div>
+      <div id="transactionHistory" class="table-wrap"></div>
+    </section>
+    <footer>Banking System · Demo project · Use test data only</footer>
+  </main>
+</body>
+</html>
